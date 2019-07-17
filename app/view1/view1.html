@@ -2,11 +2,11 @@
 <div>
         <p>
                 Search:
-                <input name="search" ng-model="search" required/>
+                <input name="search" placeholder="Search" ng-model="search" required/>
+                <input name="page" placeholder="Number of image" ng-model="page" required/>
                 <input type="button" ng-click="Search()" value="Search">
-                <input name="imageNumber" ng-model="number" va required/>
                 <p>{{length}}</p>
               </p>
-  <img ng-src="{{photo.thumb}}" ng-repeat="photo in photos />
+  <img ng-src="{{photo.thumb}}" ng-repeat="photo in photos | limitTo:page" />
   
 </div>

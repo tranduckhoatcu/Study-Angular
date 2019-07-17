@@ -40,17 +40,6 @@ $scope.Search = function() {
           thumb: thumb
         });
       }
-        // // for (var i = 0; i < totalFound; i++) {
-        //   var full = res.data.results[i].urls.full;
-        //   var regular = res.data.results[i].urls.regular;
-        //   var raw = res.data.results[i].urls.raw;
-        //   var small = res.data.results[i].urls.small;
-        //   var thumb = res.data.results[i].urls.thumb;
-
-        // //   photos.push({
-       
-        // //   });
-        // // }
 
         $scope.photos = photos;
 
@@ -62,18 +51,5 @@ $scope.Search = function() {
 
   $scope.images();
 }
-}]).
-filter('rangeFilter', function() {
-  return function( items, rangeInfo ) {
-      var filtered = [];
-      var min = parseInt(rangeInfo.userMin);
-      var max = parseInt(rangeInfo.userMax);
-      // If time is with the range
-      angular.forEach(items, function(item) {
-          if( item.time >= min && item.time <= max ) {
-              filtered.push(item);
-          }
-      });
-      return filtered;
-  };
-});;
+}])
+;
