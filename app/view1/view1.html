@@ -1,1 +1,12 @@
-<p>This is the partial for view 1.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<div>
+        <p>
+                Search:
+                <input name="search" ng-model="search" required/>
+                <input type="button" ng-click="Search()" value="Search">
+                <input name="imageNumber" ng-model="number" va required/>
+                <p>{{length}}</p>
+              </p>
+  <img ng-src="{{photo.thumb}}" ng-repeat="photo in photos />
+  
+</div>
