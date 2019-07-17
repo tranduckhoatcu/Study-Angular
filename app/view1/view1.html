@@ -1,6 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="lib/angular/angular-sanitize.min.js"></script>
-<link rel="stylesheet" href="view1/view1.css">  
+<link rel="stylesheet" href="view2/view2.css">  
 <div>
         <p>
                 Search:
@@ -11,4 +11,22 @@
                 <p>Total image in this page: {{length}}</p>
         </p>
 </div>
-<img ng-src="{{photo.thumb}}" ng-repeat="photo in photos | limitTo:page" />
+<!-- <img ng-src="{{photo.thumb}}" ng-repeat="photo in photos | limitTo:page" /> -->
+
+<div class="gridywrap">
+  <div>
+  <div class="gridy-{{photo.number1}} gridyhe-{{photo.number2}}" ng-repeat="photo in photos | limitTo:page">
+    <div class="gridimg" style="background-image: url({{photo.regular}})">&nbsp;</div>
+    
+    <div class="gridinfo">
+      <h3>Item Title</h3>
+      <div class="gridmeta">
+        <p class="gridwhen"><i class="fa fa-clock-o"></i> 17:22 17th Feb 2015</p>
+        <p class="gridwho"><i class="fa fa-user"></i> Bruce Wayne</p>
+      </div>
+      <p class="gridexerpt">Lorem ipsum dolor set amet, some dummy content..</p>
+      <a href="#" class="grid-btn grid-more"><span>More</span> <i class="fa fa-plus"></i></a>
+    </div>
+  </div>
+</div>
+</div>
