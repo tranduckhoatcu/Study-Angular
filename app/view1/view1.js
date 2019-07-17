@@ -10,8 +10,10 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ["$scope", "$http", function($scope, $http) {
-$scope.Search = function() {
   var client_id = "daf291f22aba688c64d0113e8ad87386bc3b7fbd3a85ef7f7e49772df669a9fe"
+  var currentPage = 1 ; 
+$scope.Search = function() {
+  currentPage = 1 ; 
   $scope.images = function() {
     $http({
       
@@ -19,7 +21,7 @@ $scope.Search = function() {
       header: {
         'Content-Type': "application/json",
       },
-      url: "https://api.unsplash.com/search/photos?client_id="+client_id+"&query="+$scope.search+"&per_page=100&page=1",
+      url: "https://api.unsplash.com/search/photos?client_id="+client_id+"&query="+$scope.search+"&per_page=15&page="+currentPage,
     }).then(function(res) {
         var totalFound = res.data.results.length;
         
@@ -49,6 +51,10 @@ $scope.Search = function() {
       });
   }
 
+  $scope.images();
+}
+$scope.nextPage = function() {
+  currentPage++ ; 
   $scope.images();
 }
 }])

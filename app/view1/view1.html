@@ -1,12 +1,15 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="lib/angular/angular-sanitize.min.js"></script>  
 <div>
         <p>
                 Search:
                 <input name="search" placeholder="Search" ng-model="search" required/>
                 <input name="page" placeholder="Number of image" ng-model="page" required/>
                 <input type="button" ng-click="Search()" value="Search">
+                <input type="button" ng-click="nextPage()" value="Next page">
                 <p>{{length}}</p>
               </p>
   <img ng-src="{{photo.thumb}}" ng-repeat="photo in photos | limitTo:page" />
+  
   
 </div>
