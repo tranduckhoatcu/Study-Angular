@@ -10,7 +10,8 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ["$scope", "$http", function($scope, $http) {
-  var client_id = "daf291f22aba688c64d0113e8ad87386bc3b7fbd3a85ef7f7e49772df669a9fe"
+  var client_id = "daf291f22aba688c64d0113e8ad87386bc3b7fbd3a85ef7f7e49772df669a9fe";
+  var another_client_id = "1a28e59e586593faf822eb102154d46e8f56c830d3e5d896a0293804233f991a";
   var currentPage = 1 ; 
 $scope.Search = function() {
   currentPage = 1 ; 
