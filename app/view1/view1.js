@@ -40,25 +40,24 @@ $scope.Search = function() {
           var number2 = Math.floor(Math.random() * 2) + 1;
           var test = true
           while(test){
-            if(number1 == 2 && number2 == 2){
+            if(number1 == number2 == 2){
               number1 = Math.floor(Math.random() * 2) + 1;
               number2 = Math.floor(Math.random() * 2) + 1;
             }
-            else
+            else{
+              photos.push({
+                number1: number1,
+                number2: number2,
+                full: full,
+                regular: regular,
+                raw: raw,
+                small: small,
+                thumb: thumb
+              });
               test = false;
-          }
-
-        photos.push({
-          number1: number1,
-          number2: number2,
-          full: full,
-          regular: regular,
-          raw: raw,
-          small: small,
-          thumb: thumb
-        });
+            }
       }
-
+    }
         $scope.photos = photos;
 
       },
