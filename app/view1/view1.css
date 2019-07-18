@@ -1,51 +1,65 @@
-#photos {
-    /* Prevent vertical gaps */
-    line-height: 0;
-    
-    -webkit-column-count: 5;
-    -webkit-column-gap:   0px;
-    -moz-column-count:    5;
-    -moz-column-gap:      0px;
-    column-count:         5;
-    column-gap:           0px;
- }
- 
- #photos img {
-   /* Just in case there are inline attributes */
-   width: 100% !important;
-   height: auto !important;
- }
- 
- @media (max-width: 1200px) {
-   #photos {
-   -moz-column-count:    4;
-   -webkit-column-count: 4;
-   column-count:         4;
-   }
- }
- @media (max-width: 1000px) {
-   #photos {
-   -moz-column-count:    3;
-   -webkit-column-count: 3;
-   column-count:         3;
-   }
- }
- @media (max-width: 800px) {
-   #photos {
-   -moz-column-count:    2;
-   -webkit-column-count: 2;
-   column-count:         2;
-   }
- }
- @media (max-width: 400px) {
-   #photos {
-   -moz-column-count:    1;
-   -webkit-column-count: 1;
-   column-count:         1;
-   }
- }
- 
- body {
-   margin: 0;
-   padding: 0;
- }
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, "Hiragino Kaku Gothic Pro W3", Meiryo, sans-serif;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+body a, body a:visited {
+  color: #ccc;
+  text-decoration: none;
+}
+body p {
+  margin: 0;
+}
+.flexbox {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100vw;
+}
+.flexbox:hover img {
+  opacity: 0.28;
+}
+.flexbox .item {
+  position: relative;
+  width: 33.33%;
+}
+.flexbox .item img {
+  width: 100%;
+  display: block;
+  transition: all 0.8s;
+}
+.flexbox .item .title {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  padding: 0 3%;
+  font-size: 30px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.42);
+}
+.flexbox .item:hover img {
+  opacity: 1;
+}
+@media (max-width: 860px) {
+  .flexbox {
+    height: 220vw;
+  }
+  .flexbox .item {
+    width: 50%;
+  }
+}
+@media (max-width: 667px) {
+  .flexbox {
+    height: auto;
+  }
+  .flexbox .item {
+    width: 100%;
+  }
+}

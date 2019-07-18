@@ -19,13 +19,13 @@
     <div class="gridimg" style="background-image: url({{photo.regular}})">&nbsp;</div>
     
     <div class="gridinfo">
-      <h3>Item Title</h3>
+      <h3>{{search}}</h3>
       <div class="gridmeta">
-        <p class="gridwhen"><i class="fa fa-clock-o"></i> 17:22 17th Feb 2015</p>
-        <p class="gridwho"><i class="fa fa-user"></i> Bruce Wayne</p>
+        <p class="gridwhen"><i class="fa fa-clock-o"></i>{{photo.upload_date}}</p>
+        <p class="gridwho"><i class="fa fa-user"></i>{{photo.username}}</p>
       </div>
-      <p class="gridexerpt">Lorem ipsum dolor set amet, some dummy content..</p>
-      <a href="#" class="grid-btn grid-more"><span>More</span> <i class="fa fa-plus"></i></a>
+      <p class="gridexerpt">{{photo.description}}</p>
+      <a href="#!/view2" class="grid-btn grid-more"><span>More</span> <i class="fa fa-plus"></i></a>
     </div>
   </div>
 </div>
