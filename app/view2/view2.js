@@ -12,5 +12,6 @@ angular.module('myApp.view2', ['ngRoute'])
 .controller('View2Ctrl', ["$scope", "$http",'myService', function($scope, $http,myService) {
   $scope.myreturnedData = myService.getJson();
   console.log($scope.myreturnedData);
+  // console.log($scope.myreturnedData[myreturnedData[dda]])
 
 }]);

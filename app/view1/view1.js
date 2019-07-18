@@ -36,7 +36,6 @@ $scope.Search = function() {
         var totalFound = res.data.results.length;
         $scope.length = totalFound  ;
 
-          $scope.id = 1 ;
           var full = res.data.results[1].urls.full;
           var regular = res.data.results[1].urls.regular;
           var raw = res.data.results[1].urls.raw;
@@ -48,6 +47,7 @@ $scope.Search = function() {
           var number1 = Math.floor(Math.random() * 2) + 1;
           var number2 = Math.floor(Math.random() * 2) + 1;
           photos.push({
+            id: 1,
             number1: number1,
             number2: number2,
             full: full,
@@ -60,7 +60,7 @@ $scope.Search = function() {
             upload_date: upload_date
           });
         for (var i = 2; i < totalFound; i++) {
-          $scope.id++;
+          
           var full = res.data.results[i].urls.full;
           var regular = res.data.results[i].urls.regular;
           var raw = res.data.results[i].urls.raw;
@@ -86,6 +86,7 @@ $scope.Search = function() {
             else{
               
               photos.push({
+                id: i,
                 number1: number1,
                 number2: number2,
                 full: full,
@@ -117,7 +118,11 @@ $scope.nextPage = function() {
   currentPage++ ; 
   $scope.images();
 }
-myService.setJson(photos);
+$scope.changeState = function(id) {
+  myService.setJson(photos[id-1]);
+}
+
+
 
 }])
 ;
