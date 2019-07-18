@@ -14,6 +14,7 @@ angular.module('myApp.view1', ['ngRoute'])
   var another_client_id = "1a28e59e586593faf822eb102154d46e8f56c830d3e5d896a0293804233f991a";
   var currentPage = 1 ;
   var photos = [];
+   
   $scope.last =  function(array, n) {
     if (array == null) 
       return void 0;
@@ -33,10 +34,9 @@ $scope.Search = function() {
       url: "https://api.unsplash.com/search/photos?client_id="+client_id+"&query="+$scope.search+"&per_page=15&page="+currentPage,
     }).then(function(res) {
         var totalFound = res.data.results.length;
-        
         $scope.length = totalFound  ;
 
-        
+          $scope.id = 1 ;
           var full = res.data.results[1].urls.full;
           var regular = res.data.results[1].urls.regular;
           var raw = res.data.results[1].urls.raw;
@@ -60,7 +60,7 @@ $scope.Search = function() {
             upload_date: upload_date
           });
         for (var i = 2; i < totalFound; i++) {
-        
+          $scope.id++;
           var full = res.data.results[i].urls.full;
           var regular = res.data.results[i].urls.regular;
           var raw = res.data.results[i].urls.raw;
