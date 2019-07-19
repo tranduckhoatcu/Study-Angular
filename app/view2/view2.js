@@ -12,6 +12,23 @@ angular.module('myApp.view2', ['ngRoute'])
 .controller('View2Ctrl', ["$scope", "$http",'myService', function($scope, $http,myService) {
   $scope.myreturnedData = myService.getJson();
   console.log($scope.myreturnedData);
-  // console.log($scope.myreturnedData[myreturnedData[dda]])
+  $scope.initSlider = function () {
+  $('.gallery ul li a').click(function() {
+    var itemID = $(this).attr('href');
+    $('.gallery ul').addClass('item_open');
+    $(itemID).addClass('item_open');
+    return false;
+});
+$('.close').click(function() {
+    $('.port, .gallery ul').removeClass('item_open');
+    return false;
+});
 
+$(".gallery ul li a").click(function() {
+    $('html, body').animate({
+        scrollTop: parseInt($("#top").offset().top)
+    }, 400);
+});
+  }
+  $scope.initSlider();
 }]);
